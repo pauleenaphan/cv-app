@@ -155,7 +155,7 @@ function App() {
             </CSSTransition>
           ))}  
         </section>
-        <a href="https://github.com">
+        <a href="https://github.com/pauleenaphan/cv-app">
           <img src={githubIconn} alt="GitHub Icon" className="githubIcon"/>
         </a>
       </section>
