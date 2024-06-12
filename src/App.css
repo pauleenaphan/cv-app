@@ -1,38 +1,193 @@
-.App {
+*{
+  margin: 0;
+}
+
+#projectTitle{
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pageContainer{
+  background-color: black;
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* !Left side of page where user inputs info */
+.userInfoContainer{
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Arial, sans-serif;
+  overflow-y: scroll;
+  position: relative;
+  width: 50%;
+}
+
+.generalInfo, .educationInfo, .workExpInfo{
+  margin-left: 50px;
+}
+
+.userInfoContainer h1{
+  background-color: rgba(83, 83, 83, 0.4);
+  border-radius: 10px;
+  font-size: 30px;
+  margin: 10px 0 10px;
+  padding: 15px;
+  width: 90%;
+}
+
+/* !animation when the user clicks on the tab to open up the form */
+.slide-enter {
+  opacity: 0;
+  transform: translateY(-10px); /* Initial position */
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; /* Smooth transition */
+}
+
+.slide-exit {
+  opacity: 1;
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateY(-10px); /* Final position */
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; /* Smooth transition */
+}
+
+.generalInfo{
+  margin-top: 30px;
+}
+
+form{
+  background-color: rgba(83, 83, 83, 0.4);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 15px;
+  width: 90%;
+}
+
+form p{
+  font-size: 20px;
+  margin-bottom: -5px;
+  margin-top: 10px;
+}
+
+.userInfoContainer input[type=text], textarea, input[type=tel]{
+  border-radius: 10px;
+  border: none;
+  color: black !important;
+  font-size: 18px;
+  margin-top: 10px;
+  outline: none;
+  padding: 20px;
+  width: 93%;
+}
+
+.userInfoContainer textarea{
+  height: 300px;
+  resize: none;
+}
+
+.userInfoContainer input[type=number]{
+  border-radius: 10px;
+  border: none;
+  color: black !important;
+  font-size: 18px;
+  margin-top: 10px;
+  outline: none;
+  padding: 20px;
+  width: 93%;
+}
+
+.dateContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 95.5%;
+}
+
+/* !work experience styling */
+.workExpInfo h2{
+  margin: 10px 0px;
+  text-decoration: underline;
+}
+
+.workExpInfo button{
+  background-color: rgba(83, 83, 83, 0);
+  border: none;
   color: white;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 10px auto;
+  width: 90%;
 }
 
-.App-link {
-  color: #61dafb;
+.workExpInfo button:hover{
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.githubIcon{
+  bottom: 0;
+  margin: 20px 10px 20px 50px;
+  position: relative;
+  width: 10%;
+}
+
+/* !Right side of page where resume is being built */
+.resumeOutputContainer{
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+  margin: 20px 50px;
+  width: 50%;
+}
+
+.heading{
+  border-bottom: solid 1px;
+  margin-bottom: 5px;
+}
+
+/* !header part of the resume */
+.resumeOutputContainer .headerContainer{
+  padding: 20px 0;
+  text-align: center;
+}
+
+.resumeOutputContainer .subHeader{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.resumeOutputContainer .headerContainer h1{
+  font-size: 40px;
+}
+
+/* !education part of the resume */
+.educationContainer{
+  margin: 20px;
+}
+
+.nameDateContainer{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* !work experience part of the resume */
+.workExpContainer{
+  margin: 0px 20px;
+}
+
+.workDesc{
+  padding-bottom: 15px;
 }
